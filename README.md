@@ -2,55 +2,117 @@
   <img src="icon.png" alt="CyberX logo" width="160" />
 </p>
 
-# CyberX
+# CyberX website
 
-CyberX is a local-first desktop office of security agents that work inside your project folder. Developed by Tamilselvan.
+Official marketing website for **[CyberX](https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X)** — a local-first desktop workspace for specialized AI agents.
 
-You open a folder, add an agent, and tell it what to build or change. The agent uses the AI you choose, stays in that folder, and replies in plain language with what it did.
+Developed by **Tamilselvan**. Sponsored by **[Cyber Wolf](https://www.cyberwolf360.in)**.
 
-## Contents
+Live site: [https://mathan0310e.github.io/official/](https://mathan0310e.github.io/official/)
 
-| Section | What it covers |
-| --- | --- |
-| Usage | How to open a project, talk to an agent, and send work |
-| Voice | How a spoken note becomes text in the message box |
-| Agents | How to add an agent and change its AI |
-| Best for this IDE | Why CyberX fits the project you already have open in Cursor |
+This README is about **using and developing the website only** — not installing the CyberX desktop app.
 
-## Usage
+## Stack
 
-| Step | What you do |
-| --- | --- |
-| Open a folder | Use the project you are already working in, switch to a recent one, or start a new one. The X on a recent folder only removes it from the list. |
-| Open an agent | Click the agent on the floor, or the name under it. |
-| Write the task | Use plain language. **Make clear** rewrites a short note into a task the agent can follow. |
-| Send it | **Auto on** sends a waiting prompt when the agent is free. **Auto off** holds it until you press send. |
-| Change a prompt | Use the send, edit, and delete icons on that queued row. |
+- Vite
+- React 19
+- TypeScript
+- React Router (HashRouter)
+- Tailwind CSS 4
 
-## Voice
+## Website usage
 
-| Action | Result |
-| --- | --- |
-| Click **voice** | The button changes to **listening** and the microphone opens. |
-| Speak, then click **listening** | The words are added to the message box so you can read them before sending. |
-| Groq key (`gsk_`) | Transcription uses Groq. |
-| xAI key (`xai-`) | Transcription uses xAI. The same Voice setting accepts either key. |
+### Run locally
 
-## Agents
+```bash
+npm install
+npm run dev
+```
 
-| Action | Result |
-| --- | --- |
-| Add an agent | Choose the name, the role, and the AI that should do the work. |
-| Edit agent | Pick another provider or model and save. |
-| Same AI | The current conversation stays. |
-| Different AI | That agent restarts on the new provider and model. |
+Open the URL Vite prints (usually `http://localhost:5173/`).
 
-## Best for this IDE
+### Pages
 
-CyberX is best used beside Cursor. Keep the project open here to read and edit the code, and point a CyberX agent at the same folder so it can build, change, and explain the work without leaving the project.
+| Page | Route |
+|------|--------|
+| Home | `/#/` |
+| Agents | `/#/agents` |
+| Agent detail | `/#/agents/<id>` (example: `/#/agents/autonomous`) |
+| Features | `/#/features` |
+| Download | `/#/download` |
+| Install guide | `/#/install` |
 
-| In Cursor | In CyberX |
-| --- | --- |
-| Read and edit the project files | The agent works in that same folder |
-| Review what changed | The agent replies in plain language with what it did |
-| Stay in the editor | Prompts, voice, and AI changes stay on the agent |
+### Common website tasks
+
+| Task | Where |
+|------|--------|
+| Edit product copy, agents, download links, FAQs | `src/data.ts` |
+| Change page routes / layout shell | `src/App.tsx`, `src/components/SiteLayout.tsx` |
+| Edit a page | `src/pages/` |
+| Edit UI sections | `src/components/` |
+| Edit SVG artwork | `src/illustrations/` |
+| Edit styles / tokens | `src/styles/` |
+| Replace hero demo video | `public/cyberx-demo.mp4` (see below) |
+
+### Scripts (website)
+
+```bash
+npm run dev          # local website server
+npm run build        # typecheck + build into dist/
+npm run preview      # preview the built website
+npm run typecheck    # TypeScript check only
+npm run audit        # website layout / interaction / contrast checks
+```
+
+## Hero demo video
+
+The home hero plays the CyberX desktop demo recording.
+
+| Asset | Path in this repo |
+|-------|-------------------|
+| Video (source) | `public/cyberx-demo.mp4` |
+| Poster image | `public/cyberx-demo-poster.jpg` |
+| Used in | `src/components/HeroVideo.tsx` |
+| Served URL in the site | `./cyberx-demo.mp4` |
+
+Vite copies everything under `public/` to the build root, so after `npm run build` the video is also available as `dist/cyberx-demo.mp4`.
+
+### Replace the video
+
+1. Put the new file at **`public/cyberx-demo.mp4`** (same name, or update `HeroVideo.tsx` if you rename it).
+2. Optionally update **`public/cyberx-demo-poster.jpg`** to match the first frame.
+3. Refresh `npm run dev` — no import change is required when the filename stays the same.
+
+Playback notes (website behaviour):
+
+- Muted autoplay + loop (required by browsers without a user gesture)
+- Mounts when the hero is near the viewport
+- Pauses when the tab is hidden or `prefers-reduced-motion: reduce` is set
+
+## Project structure
+
+```
+public/
+  cyberx-demo.mp4           Hero demo video (root of public assets)
+  cyberx-demo-poster.jpg    Video poster frame
+  icons/                    Favicon and app icons
+  manifest.webmanifest      PWA metadata
+src/
+  App.tsx                   Routes
+  data.ts                   Website content + download metadata
+  pages/                    One file per website page
+  components/               Layout and sections
+  illustrations/            SVG artwork
+  hooks/                    Shared React hooks
+  styles/                   Tokens, globals, animations, responsive
+scripts/                    Website audit helpers
+```
+
+## Content source of truth
+
+All product facts shown on the site (versions, agent text, release URLs, checksums) live in **`src/data.ts`**. Update that file when the website copy or download links change.
+
+## Related repositories
+
+- Desktop app + installers: [Tamilselvan-S-Cyber-Security/Cyber-X](https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X)
+- This repo: website only
