@@ -601,7 +601,7 @@ Python toolkit under `cyberx-cli/` for Kali / WSL style scanning with shared rul
 > Who develops CyberX.
 
 <p align="center">
-  <img src="docs/cyberx-mark.png" alt="CyberX mark" width="110" />
+  <img src="docs/cyberx-logo.png" alt="CyberX mark" width="110" />
   &nbsp;&nbsp;&nbsp;
   <img src="docs/cyberwolf.png" alt="Cyber Wolf" width="140" />
 </p>
