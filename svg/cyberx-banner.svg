@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-label="CyberX — local multi-agent security office by Cyber Wolf">
+  <title>CyberX by Cyber Wolf</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071018"/>
+      <stop offset="55%" stop-color="#0B1A2E"/>
+      <stop offset="100%" stop-color="#102A3C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#22D3EE" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="420" fill="url(#bg)"/>
+  <rect width="1280" height="420" fill="url(#grid)"/>
+  <ellipse cx="980" cy="80" rx="280" ry="160" fill="url(#glow)"/>
+
+  <!-- Left brand plate -->
+  <g transform="translate(64, 72)">
+    <rect x="0" y="0" width="420" height="276" rx="18" fill="#0E2236" stroke="#1E3A52" stroke-width="2"/>
+    <rect x="0" y="0" width="8" height="276" rx="4" fill="url(#accent)"/>
+
+    <!-- Shield / X mark -->
+    <g transform="translate(36, 36)">
+      <path d="M40 8 L72 22 L72 52 C72 72 56 88 40 96 C24 88 8 72 8 52 L8 22 Z"
+            fill="#0B1A2E" stroke="#22D3EE" stroke-width="3"/>
+      <text x="40" y="64" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif"
+            font-size="36" font-weight="800" fill="#22D3EE">X</text>
+    </g>
+
+    <text x="130" y="78" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif"
+          font-size="54" font-weight="800" letter-spacing="1" fill="#F8FAFC">CyberX</text>
+    <text x="132" y="112" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif"
+          font-size="14" font-weight="600" letter-spacing="4" fill="#22D3EE">SECURITY OFFICE</text>
+
+    <text x="36" y="168" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif"
+          font-size="18" fill="#CBD5E1">Local-first multi-agent desk for</text>
+    <text x="36" y="196" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif"
+          font-size="18" fill="#CBD5E1">red team · blue team · SOC · AI review</text>
+
+    <rect x="36" y="224" width="168" height="28" rx="8" fill="#12283C" stroke="#22D3EE" stroke-opacity="0.5"/>
+    <text x="120" y="243" text-anchor="middle" font-family="Consolas, Menlo, monospace"
+          font-size="12" fill="#22D3EE">v0.1.2 · Windows · Linux · macOS</text>
+  </g>
+
+  <!-- Right copy -->
+  <g transform="translate(560, 120)">
+    <text font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="700" fill="#F8FAFC">
+      Agents that work the floor —
+    </text>
+    <text y="42" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="700" fill="#F8FAFC">
+      you steer the <tspan fill="#22D3EE">Cyber Wolf</tspan> office.
+    </text>
+    <text y="98" font-family="Consolas, Menlo, monospace" font-size="15" fill="#94A3B8">
+      clone sites · scan code · hire specialists · laugh on break
+    </text>
+    <text y="140" font-family="Consolas, Menlo, monospace" font-size="14" fill="#64748B">
+      Developed by Tamilselvan · cyberwolf360.in
+    </text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="412" width="1280" height="8" fill="url(#accent)"/>
+</svg>

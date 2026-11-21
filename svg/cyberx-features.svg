@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="120" viewBox="0 0 960 120" role="img" aria-label="CyberX feature strip">
+  <title>CyberX features</title>
+  <defs>
+    <style>
+      .t { font-family: Segoe UI, Helvetica Neue, Arial, sans-serif; fill: #F8FAFC; font-size: 14px; font-weight: 700; }
+      .s { font-family: Consolas, Menlo, monospace; fill: #94A3B8; font-size: 11px; }
+    </style>
+  </defs>
+  <rect width="960" height="120" rx="14" fill="#0B1A2E"/>
+
+  <g transform="translate(24,24)">
+    <rect width="210" height="72" rx="10" fill="#12283C" stroke="#1E3A52"/>
+    <text class="t" x="16" y="30">🛡️ Security scan</text>
+    <text class="s" x="16" y="52">secrets · XSS · AI · cloud</text>
+  </g>
+  <g transform="translate(258,24)">
+    <rect width="210" height="72" rx="10" fill="#12283C" stroke="#1E3A52"/>
+    <text class="t" x="16" y="30">🌐 Clone website</text>
+    <text class="s" x="16" y="52">URL → local project</text>
+  </g>
+  <g transform="translate(492,24)">
+    <rect width="210" height="72" rx="10" fill="#12283C" stroke="#1E3A52"/>
+    <text class="t" x="16" y="30">🤖 Multi-agent</text>
+    <text class="s" x="16" y="52">Ollama · Claude · Codex</text>
+  </g>
+  <g transform="translate(726,24)">
+    <rect width="210" height="72" rx="10" fill="#12283C" stroke="#1E3A52"/>
+    <text class="t" x="16" y="30">😆 Floor comedy</text>
+    <text class="s" x="16" y="52">laugh · cheer · quips</text>
+  </g>
+</svg>

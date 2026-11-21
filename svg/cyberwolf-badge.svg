@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="56" viewBox="0 0 360 56" role="img" aria-label="Developed by Cyber Wolf">
+  <title>Developed by Cyber Wolf</title>
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0B1A2E"/>
+      <stop offset="100%" stop-color="#12283C"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="359" height="55" rx="12" fill="url(#bar)" stroke="#22D3EE" stroke-opacity="0.55"/>
+  <circle cx="28" cy="28" r="14" fill="#071018" stroke="#22D3EE" stroke-width="2"/>
+  <text x="28" y="33" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" fill="#22D3EE">CW</text>
+  <text x="52" y="24" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" fill="#64748B">DEVELOPED BY</text>
+  <text x="52" y="42" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="800" fill="#F8FAFC">Cyber Wolf</text>
+  <text x="250" y="34" font-family="Consolas, Menlo, monospace" font-size="11" fill="#94A3B8">· Tamilselvan</text>
+</svg>
