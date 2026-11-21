@@ -14,9 +14,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.2-22D3EE?style=for-the-badge&labelColor=0B1A2E" alt="v0.1.2" />
-  <img src="https://img.shields.io/badge/Electron-32-47848F?style=for-the-badge&labelColor=0B1A2E" alt="Electron" />
   <img src="https://img.shields.io/badge/platform-Win%20%7C%20Linux%20%7C%20macOS-34D399?style=for-the-badge&labelColor=0B1A2E" alt="platforms" />
-  <img src="https://img.shields.io/badge/license-see%20repo-FACC15?style=for-the-badge&labelColor=0B1A2E" alt="license" />
 </p>
 
 <p align="center">
@@ -42,7 +40,7 @@
 # Interactive table of contents
 
 > Click any row. Expand `<details>` blocks below for deep explanations.  
-> **Last sections (§31–§36) are dedicated to the developer — Cyber Wolf / Tamilselvan.**
+> **§32** covers the developer — Cyber Wolf / Tamilselvan.
 
 | # | Section | What you learn |
 | ---: | --- | --- |
@@ -63,11 +61,7 @@
 | 15 | [IDE features](#15-ide-features) | Palette, menus, shortcuts |
 | 16 | [Hive & harness paths](#16-hive--harness-paths) | `cyberwolf/` layout |
 | 17 | [Guardrails](#17-guardrails) | Auto mode, budgets, breakers |
-| 18 | [Architecture](#18-architecture) | Main / preload / renderer |
-| 19 | [Project map](#19-project-map) | Important folders |
-| 20 | [IPC surface](#20-ipc-surface-windowcth) | `window.cth` highlights |
 | 22 | [Installer pack](#22-installer-pack) | GitHub Releases downloads |
-| 23 | [Signing](#23-signing) | Authenticode notes |
 | 24 | [Changelog highlights](#24-changelog-highlights) | 0.1.0 → 0.1.2 |
 | 25 | [FAQ](#25-faq) | Common questions |
 | 26 | [Safety & ethics](#26-safety--ethics) | Authorized testing only |
@@ -75,11 +69,7 @@
 | 28 | [Keyboard & menus](#28-keyboard--menus) | Electron menu map |
 | 29 | [CyberX CLI](#29-cyberx-cli) | Kali / Python scanner |
 | 30 | [Roadmap ideas](#30-roadmap-ideas) | Where it can grow |
-| 31 | [Contributing](#31-contributing) | How to help |
 | **32** | [**About the developer — Cyber Wolf**](#32-about-the-developer--cyber-wolf) | **Who builds this** |
-| **33** | [**Developer vision**](#33-developer-vision) | **Why CyberX was made** |
-| **34** | [**Developer contact & links**](#34-developer-contact--links) | **Site · GitHub · brand** |
-| **35** | [**Acknowledgments**](#35-acknowledgments) | **Libraries & inspiration** |
 | **36** | [**License & notice**](#36-license--notice) | **Closing** |
 
 <p align="center">
@@ -143,7 +133,7 @@ Download release builds from GitHub. Current Windows package: **0.1.2**.
 | --- | --- | --- |
 | **Windows** | [CyberX-0.1.2-win-x64-setup.exe](https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X/releases/download/CyberX/CyberX-0.1.2-win-x64-setup.exe) | Setup installer (recommended) |
 | **Linux** | [CyberX-0.1.0-linux-x64.tar.gz](https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X/releases/download/CyberX/CyberX-0.1.0-linux-x64.tar.gz) | Unpack on Linux |
-| macOS | Build on a Mac / CI (`npm run dist:mac`) | Place DMG under `CyberX-installer/macos/` |
+| macOS | DMG from release / Mac build when available | See `CyberX-installer/macos/` |
 
 <p align="center">
   <a href="https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X/releases/download/CyberX/CyberX-0.1.2-win-x64-setup.exe">
@@ -163,7 +153,7 @@ Download release builds from GitHub. Current Windows package: **0.1.2**.
 1. Download [CyberX-0.1.2-win-x64-setup.exe](https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X/releases/download/CyberX/CyberX-0.1.2-win-x64-setup.exe).
 2. Run the installer and choose a folder if asked.
 3. Finish — CyberX can launch automatically.
-4. If SmartScreen appears on an unsigned build, see [§23 Signing](#23-signing).
+4. If Windows SmartScreen appears, choose **More info → Run anyway** if you trust this release.
 
 </details>
 
@@ -188,7 +178,6 @@ bash CyberX-installer/linux/install-linux.sh /path/to/CyberX-0.1.0-linux-x64.tar
 <br />
 
 ```bash
-# on a Mac after dist:mac / CI artifact
 bash CyberX-installer/macos/install-macos.sh path/to/CyberX-*-mac-universal.dmg
 ```
 
@@ -263,8 +252,6 @@ The floor is a Pixi.js scene: desks, paths, thought bubbles, status glyphs.
 - **Task complete popup** — card with funny subtitle  
 - **Floor comedy popup** — bottom-right toast when someone cracks up  
 
-Files of interest: `src/renderer/src/scene/office/Character.ts`, `OfficeFloor.tsx`, `ComedyMomentPopup.tsx`.
-
 </details>
 
 ---
@@ -307,8 +294,6 @@ https://example.com
 | SSRF guard | always | Blocks localhost / private / link-local / metadata hosts |
 
 **Only clone sites you own or are authorized to test.**
-
-Implementation: `src/main/siteImport.ts` · IPC `site:import` · `window.cth.siteImport(...)`.
 
 </details>
 
@@ -372,7 +357,7 @@ One-click install writes Claude Code `SKILL.md` files (user or project scope).
 | Identity & access | OAuth/OIDC, RBAC, MFA, service accounts |
 | Reporting | Pentest report writer, hardening checklist |
 
-Catalog: `src/shared/securitySkills.ts` (~**41** skills).
+About **41** skills in the Security tab.
 
 </details>
 
@@ -421,8 +406,6 @@ Type any model id. For OSS engines:
 - Settings → default Claude model field  
 - Settings → Default orchestrator  
 - Settings → AI Engines → per-CLI default model placeholders  
-
-Component: `CustomModelField.tsx` · picks: `ossModels.ts`.
 
 </details>
 
@@ -483,7 +466,7 @@ Under your harness home (default `~/CyberWolf`):
   palace/           MemPalace data
 ```
 
-Migration runs on open — legacy names rename when safe. See `src/main/harnessPaths.ts`.
+Migration runs on open — legacy names rename when safe.
 
 ---
 
@@ -498,72 +481,12 @@ Migration runs on open — legacy names rename when safe. See `src/main/harnessP
 
 ---
 
-## 18. Architecture
-
-```text
-┌──────────────────────── Renderer (React + Pixi) ────────────────────────┐
-│  OfficeFloor · Command Center · SecurityPanel · Settings · Modals       │
-└───────────────────────────────┬─────────────────────────────────────────┘
-                                │ window.cth (preload bridge)
-┌───────────────────────────────▼─────────────────────────────────────────┐
-│  Main: PtyManager · hive · hooks · securityScanner · siteImport · fs/git │
-└───────────────────────────────┬─────────────────────────────────────────┘
-                                │
-                    claude / agy / codex / opencode / …
-```
-
-Full contributor map: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
-
----
-
-## 19. Project map
-
-```text
-src/main/           Electron main (IPC, PTY, hive, scan, clone)
-src/preload/        contextBridge → window.cth
-src/renderer/       React UI + Pixi office
-src/shared/         securityScan, securitySkills, ossModels, …
-CyberX-installer/   OS installers
-cyberx-cli/         Python CLI scanner for Kali-style workflows
-svg/        README SVGs (banner, working, badges)
-build/              icons, signing notes, release-notes
-```
-
----
-
-## 20. IPC surface (`window.cth`)
-
-Highlights (not exhaustive):
-
-| Call | Purpose |
-| --- | --- |
-| `siteImport` | Clone website → register project |
-| `securityScan` | Static scan |
-| `securityExportPdf` | PDF report |
-| `skillsInstallSecurity` | Install built-in skills |
-| `spawnPty` / `pty:*` | Agent terminals |
-| `updateConfig` / `getConfig` | Harness settings |
-| `chooseFolder` | Workspace picker |
-
-Typed in `src/preload/index.ts`.
-
----
-
 ## 22. Installer pack
 
-Release downloads (primary):
+Release downloads:
 
 - Windows: https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X/releases/download/CyberX/CyberX-0.1.2-win-x64-setup.exe
 - Linux: https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X/releases/download/CyberX/CyberX-0.1.0-linux-x64.tar.gz
-
-Local pack folder (optional): [`CyberX-installer/README.md`](CyberX-installer/README.md).
-
----
-
-## 23. Signing
-
-Unsigned Windows builds may trigger SmartScreen.  
-Paid OV/EV Authenticode + `CSC_LINK` / `CSC_KEY_PASSWORD` — guide: [`build/SIGNING.md`](build/SIGNING.md).
 
 ---
 
@@ -646,14 +569,13 @@ Security skills embed the same guardrails in every `SKILL.md`.
 | Agent won’t start | Check engine installed / PATH; Settings → Prerequisites |
 | Scan refused | Folder must be in **registered projects** |
 | Clone fails | HTTPS URL? Not localhost? Network OK? |
-| SmartScreen | Expected if unsigned — [§23](#23-signing) |
-| Dist folder locked | Build to `dist-win-012` style output dir |
+| SmartScreen | More info → Run anyway (if you trust the download) |
 
 ---
 
 ## 28. Keyboard & menus
 
-Electron app menu mirrors IDE habits: File, Edit, Selection, View, Go, Run, Terminal, Help.  
+App menu: File, Edit, Selection, View, Go, Run, Terminal, Help.  
 **Run** opens Security. Palette / shortcuts live in the IDE panel prefs.
 
 ---
@@ -666,27 +588,17 @@ Python toolkit under `cyberx-cli/` for Kali / WSL style scanning with shared rul
 
 ## 30. Roadmap ideas
 
-- Signed Windows releases by default  
-- Deeper DAST (still authorized-only)  
-- Richer macOS notarized CI artifacts  
 - More floor animations & tutorials  
+- Deeper authorized security checks  
+- Broader install coverage  
 
 *(Ideas — not commitments.)*
 
 ---
 
-## 31. Contributing
-
-1. Read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) and [`docs/DESIGN.md`](docs/DESIGN.md).  
-2. Keep changes scoped; match existing patterns.  
-3. Run `npm run typecheck`.  
-4. Do not commit secrets or large binaries unless intentional (installers live in `CyberX-installer/`).
-
----
-
 # Developer sections
 
-> Everything below is about **who builds CyberX** and how to credit the work.
+> Who develops CyberX.
 
 <p align="center">
   <img src="docs/cyberx-mark.png" alt="CyberX mark" width="110" />
@@ -713,8 +625,7 @@ Cyber Wolf focuses on **cybersecurity products**, software services, and practic
 | Product | **CyberX** |
 | Developer | **Tamilselvan** |
 | Website | [https://www.cyberwolf360.in](https://www.cyberwolf360.in) |
-| Repository | [Tamilselvan-S-Cyber-Security/CyberX](https://github.com/Tamilselvan-S-Cyber-Security/CyberX) |
-| App id | `com.tamilselvan.cyberx` |
+| Repository | [Tamilselvan-S-Cyber-Security/Cyber-X](https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X) |
 | Current version | **0.1.2** |
 
 </details>
@@ -731,92 +642,6 @@ Cyber Wolf focuses on **cybersecurity products**, software services, and practic
 - Security-first cast and office metaphor  
 
 </details>
-
----
-
-## 33. Developer vision
-
-Tamilselvan / Cyber Wolf built CyberX so security work can feel like **running a floor**, not babysitting a single chat thread.
-
-<details>
-<summary><b>Vision pillars (expand)</b></summary>
-
-<br />
-
-1. **Local-first** — your projects, your keys, your Ollama, your machine.  
-2. **Visible agents** — status on the floor beats hidden background jobs.  
-3. **Security-native** — scanner, skills, clone, reports in the same app.  
-4. **Human tone** — cheer, laugh, quips — serious tools can still feel alive.  
-5. **Honest craft** — unsigned builds warn; signing docs are included; findings are leads, not magic.
-
-</details>
-
-<details>
-<summary><b>Design principles the developer follows</b></summary>
-
-<br />
-
-- Prefer clear IPC boundaries (`window.cth`) over leaking Node into the UI.  
-- Prefer registered-folder allowlists for scan/write.  
-- Prefer bounded crawls and SSRF guards for site import.  
-- Prefer installable skills over opaque “do everything” prompts.  
-- Prefer changelog + release-notes that a human can scan in a toast.
-
-</details>
-
----
-
-## 34. Developer contact & links
-
-| Link | URL |
-| --- | --- |
-| Cyber Wolf site | https://www.cyberwolf360.in |
-| CyberX GitHub | https://github.com/Tamilselvan-S-Cyber-Security/Cyber-X |
-| Brand assets | `docs/cyberx-logo.png`, `docs/cyberx-mark.png`, `docs/cyberwolf.png` |
-| README art | [`svg/`](svg/) folder (banner, working, features, badge) |
-| Signing guide | [`build/SIGNING.md`](build/SIGNING.md) |
-| Architecture | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) |
-
-<details>
-<summary><b>How to credit CyberX in your write-up</b></summary>
-
-<br />
-
-Suggested line:
-
-> CyberX — local-first multi-agent security office. Developed by Cyber Wolf / Tamilselvan. https://www.cyberwolf360.in
-
-</details>
-
-<details>
-<summary><b>Brand kit reminder</b></summary>
-
-<br />
-
-Generate/refresh icons from the logo pipeline:
-
-```bash
-node tools/make-cyberx-logo.cjs
-```
-
-Outputs splash/mark/icons under `docs/` and `build/`.
-
-</details>
-
----
-
-## 35. Acknowledgments
-
-CyberX stands on open tools and ecosystems:
-
-- Electron · electron-vite · electron-builder  
-- React · PixiJS · xterm · Monaco  
-- node-pty · better-sqlite3  
-- Claude Code / Codex / OpenCode / Crush / pi and other CLI agents you connect  
-- Ollama and local model runners  
-- OWASP / CWE references used in scanner & skills copy  
-
-Community installers, bug reports, and skill ideas are welcome through the GitHub repo.
 
 ---
 
